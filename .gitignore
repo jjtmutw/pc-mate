@@ -6,6 +6,7 @@
 .venv/
 venv/
 .cache/
+.pyinstaller/
 __pycache__/
 *.pyc
 dist/
