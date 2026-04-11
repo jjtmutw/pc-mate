@@ -1,0 +1,11 @@
+{
+  "host": "broker.emqx.io",
+  "port": 1883,
+  "username": "",
+  "password": "",
+  "topic": "jj/voice/input",
+  "keepalive": 60,
+  "use_tls": false,
+  "paste_hotkey": "ctrl+v",
+  "append_enter_default": true
+}

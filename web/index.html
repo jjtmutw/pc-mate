@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice MQTT Desktop Paste</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <div class="blob blob-a"></div>
+      <div class="blob blob-b"></div>
+      <div class="mesh"></div>
+    </div>
+
+    <main class="shell">
+      <section class="hero card">
+        <p class="eyebrow">VOICE TO DESKTOP</p>
+        <h1>手機輸入，電腦即貼</h1>
+        <p class="lead">
+          用手機說話或掃碼，內容會立即送到電腦目前游標位置。
+        </p>
+      </section>
+
+      <section class="grid">
+        <section class="card">
+          <div class="section-head">
+            <p class="eyebrow">Step 1</p>
+            <h2>MQTT 連線</h2>
+          </div>
+
+          <label class="field">
+            <span>WebSocket URL</span>
+            <input id="broker-url" type="text" value="wss://broker.emqx.io:8084/mqtt" placeholder="wss://broker.emqx.io:8084/mqtt">
+          </label>
+
+          <label class="field">
+            <span>Topic</span>
+            <input id="topic" type="text" value="jj/voice/input">
+          </label>
+
+          <label class="field">
+            <span>Username</span>
+            <input id="username" type="text" placeholder="Optional">
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input id="password" type="password" placeholder="Optional">
+          </label>
+
+          <div class="button-row">
+            <button id="connect-button" class="primary-button" type="button">連接 MQTT</button>
+            <button id="disconnect-button" class="ghost-button" type="button">中斷連線</button>
+          </div>
+
+          <p id="mqtt-status" class="muted">
+            請填入支援 WebSocket 的 MQTT 位址。
+          </p>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <p class="eyebrow">Step 2</p>
+            <h2>語音辨識</h2>
+          </div>
+
+          <label class="field">
+            <span>辨識語言</span>
+            <select id="language-select">
+              <option value="zh-TW">繁體中文</option>
+              <option value="en-US">English</option>
+              <option value="ja-JP">日本語</option>
+            </select>
+          </label>
+
+          <div class="button-row">
+            <button id="listen-button" class="primary-button" type="button">開始說話</button>
+            <button id="stop-button" class="ghost-button" type="button">停止辨識</button>
+          </div>
+
+          <p id="speech-status" class="muted">
+            使用手機瀏覽器的內建語音辨識。
+          </p>
+        </section>
+
+        <section class="card" id="scanner-card">
+          <div class="section-head">
+            <p class="eyebrow">Step 3</p>
+            <h2>QR / Barcode 掃描</h2>
+          </div>
+
+          <div id="scanner" class="scanner-shell"></div>
+          <p id="scan-status" class="muted">
+            可掃描 QR Code 與常見條碼。
+          </p>
+
+          <div class="button-row">
+            <button id="start-scan-button" class="primary-button" type="button">開始掃描</button>
+            <button id="stop-scan-button" class="ghost-button" type="button">停止掃描</button>
+          </div>
+
+          <p class="muted">
+            掃到內容後會直接帶入下方文字區，並播放提示音。
+          </p>
+        </section>
+
+        <section class="card transcript-card">
+          <div class="section-head">
+            <p class="eyebrow">Step 4</p>
+            <h2>待發送文字</h2>
+          </div>
+
+          <label class="field">
+            <span>內容</span>
+            <textarea id="transcript-input" rows="6" placeholder="語音結果或掃碼結果會出現在這裡，也可以手動修改後再送出。"></textarea>
+          </label>
+
+          <label class="check-row">
+            <input id="append-enter" type="checkbox" checked>
+            <span>貼上後自動送出 Enter</span>
+          </label>
+
+          <div class="button-row">
+            <button id="send-button" class="primary-button" type="button">發送到電腦</button>
+            <button id="clear-button" class="ghost-button" type="button">清空內容</button>
+          </div>
+
+          <p class="muted">
+            電腦端會自動貼到目前焦點位置。
+          </p>
+        </section>
+
+        <section class="card log-card">
+          <div class="section-head">
+            <p class="eyebrow">Monitor</p>
+            <h2>事件記錄</h2>
+          </div>
+          <div id="log" class="log" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

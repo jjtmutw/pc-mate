@@ -1,0 +1,112 @@
+{'_bz2.pyd': bytearray(b'\x86\xd1\xb2\xa9\x07\x0c\xd7\xd5!$\x12j5\x7f\xf0g'),
+ '_ctypes.pyd': bytearray(b'\x165\xa0\xc5\xa7-\xf5\xaed\x07,\xbb\x00e\xae\xbe'),
+ '_decimal.pyd': bytearray(b' \xc7r\x03\xdd\xf9\xff/\xf9mm\x11\xde\xa2\xed\xcf'),
+ '_hashlib.pyd': bytearray(b'\xd4gGP\xc72\xf0\xdbLM\xd6\xa8:\x91$\xfe'),
+ '_lzma.pyd': bytearray(b'tG\xef\xd8\xd7\x1e\x8a\x19)\xbe\x0f\xacr+B\xdc'),
+ '_queue.pyd': bytearray(b'\xd8\xc1\xb8\x1b\xbc\x12[j\xd1\xf4\x8a\x17!\x813n'),
+ '_socket.pyd': bytearray(b'\x81\x91f\x05O\xec\x07\xef\xcd\x10b\xf1<!G\xee'),
+ '_ssl.pyd': bytearray(b'y\x10\xfb*\xf4\x0e\x81\xbe\xe2\x11\x18,\xff\xec\n\x06'),
+ '_uuid.pyd': bytearray(b'\xb6\x8c\x98\x11<\x8e~\x83\xafV\xba\x98\xff:\xc8J'),
+ 'api-ms-win-core-console-l1-1-0.dll': bytearray(b'q@_\x0b\xa5\xd7\xdaZ_\x91_3'
+                                                 b'fw\x86\xde'),
+ 'api-ms-win-core-datetime-l1-1-0.dll': bytearray(b"\xa1}'\xe0\x14x\xc1{"
+                                                  b'\x88yO\xd0\xf7\x97\x82\xfc'),
+ 'api-ms-win-core-debug-l1-1-0.dll': bytearray(b'\xe4\x85\xc1\xc5\xf3:\xd1\x0e'
+                                               b'\xec\x96\xe2\xcd'
+                                               b'\xbd\xdf\xf3\xc7'),
+ 'api-ms-win-core-errorhandling-l1-1-0.dll': bytearray(b'\x0f\xfb4\xc0'
+                                                       b'\xc2\xcd\xecG'
+                                                       b'\xe0c\xc5\xe0'
+                                                       b'\xc9k\x9c?'),
+ 'api-ms-win-core-file-l1-1-0.dll': bytearray(b'y,+\x83\xbcN\x02rxZ\xa4\xf5'
+                                              b'\xf2R\xff\x07'),
+ 'api-ms-win-core-file-l1-2-0.dll': bytearray(b'I\xe3&\n\xe3\xf9s`\x8fMG\x01'
+                                              b'\xeb\x97\xeb\x95'),
+ 'api-ms-win-core-file-l2-1-0.dll': bytearray(b'\x7f\x14\xfd\x046\xc0f\xa8'
+                                              b'\xb4\x0ef8l\xebU\xd0'),
+ 'api-ms-win-core-handle-l1-1-0.dll': bytearray(b'\x10\xf0\xc2,\x19\xd5\xbe\xe2'
+                                                b'&\x84\\\xd48\x0bG\x91'),
+ 'api-ms-win-core-heap-l1-1-0.dll': bytearray(b'@P8\xfb"\xcd\x8fr\\(g\xc9'
+                                              b'\xb44[e'),
+ 'api-ms-win-core-interlocked-l1-1-0.dll': bytearray(b'\xaf\xf9\x16\\'
+                                                     b'\xff\x0f\xb1\xe4'
+                                                     b'\x9cd\xb9\xe1'
+                                                     b'\xea\xef\xdd\x86'),
+ 'api-ms-win-core-libraryloader-l1-1-0.dll': bytearray(b'C4\xf1\xa7'
+                                                       b'\xb1\x80\x99\x84'
+                                                       b's\xdc\x82\x8d'
+                                                       b'\x9a1\xe76'),
+ 'api-ms-win-core-localization-l1-2-0.dll': bytearray(b'qE\x7f\xd1]\xe9\xe0\xb3'
+                                                      b'\xad\x83\xb4el\xad(p'),
+ 'api-ms-win-core-memory-l1-1-0.dll': bytearray(b'\xd3\x9f\xbb\xea\xc4)\x10\x98'
+                                                b'I\xec~\r\xc1\xeck\x90'),
+ 'api-ms-win-core-namedpipe-l1-1-0.dll': bytearray(b'\x0e\\\xd8\x08'
+                                                   b'\xe9\xf4\x07\xe7'
+                                                   b'_\x98\xbb\xb6\x02\xa8\xdfH'),
+ 'api-ms-win-core-processenvironment-l1-1-0.dll': bytearray(b'\xccR\xcd\x91'
+                                                            b'\xb1\xcb\xd2\x07'
+                                                            b'%\x08\x0f\x1a'
+                                                            b'\\!_\xcc'),
+ 'api-ms-win-core-processthreads-l1-1-0.dll': bytearray(b'-\xd7\x11\xea'
+                                                        b'\x0f\x97\xcb|'
+                                                        b'Z\xb9\x8a\xe6'
+                                                        b'\xf5{\x949'),
+ 'api-ms-win-core-processthreads-l1-1-1.dll': bytearray(b"\xe98\x16\xc0C's\r"
+                                                        b'A"Nz\x1b\xa6\xdcQ'),
+ 'api-ms-win-core-profile-l1-1-0.dll': bytearray(b'\x05\x18G\xe7\xaaz@\xa1'
+                                                 b'\xb0\x81\xffKyA\x0b['),
+ 'api-ms-win-core-rtlsupport-l1-1-0.dll': bytearray(b'*\xa1\xf0\xc2\r\xfbE\x86'
+                                                    b'\xb2\x8f\xaf*\xa1k{\x00'),
+ 'api-ms-win-core-string-l1-1-0.dll': bytearray(b'n]\xa9\x81\x9b\xd5=\xcb'
+                                                b'U\xab\xde\x1d\xa6\x7f4\x93'),
+ 'api-ms-win-core-synch-l1-1-0.dll': bytearray(b'\xf3xE_\xb8\x14\x88\xf5'
+                                               b'\xbf\xd3a~<Zu\xc0'),
+ 'api-ms-win-core-synch-l1-2-0.dll': bytearray(b"^91B'Mu\x89\xad=\xf9&"
+                                               b'\xa5)"\x8c'),
+ 'api-ms-win-core-sysinfo-l1-1-0.dll': bytearray(b'{\x99{\xd9l\xb7\xfa\x92'
+                                                 b'\xde\xe6@\xd5'
+                                                 b'\x03\x0f\x8b\xea'),
+ 'api-ms-win-core-timezone-l1-1-0.dll': bytearray(b'\xac\xf4\r^g\x99#\x1c'
+                                                  b'\xf7\xe4\x02k\xad\x0cP\xa0'),
+ 'api-ms-win-core-util-l1-1-0.dll': bytearray(b"zu\xbc5\\\xa9\xf0\x99\\,'\x97"
+                                              b'\x7f\xa8\x06~'),
+ 'api-ms-win-crt-conio-l1-1-0.dll': bytearray(b"\x19\x87l\n'<bo\x0e{\xd2\x89"
+                                              b'\x88\xea)\x0e'),
+ 'api-ms-win-crt-convert-l1-1-0.dll': bytearray(b'\xd6gAG,\x89\x16\x92'
+                                                b'\x05N\x0b\xacm\xde\x10\x0b'),
+ 'api-ms-win-crt-environment-l1-1-0.dll': bytearray(b"\x0e\xeb\t\xc0li&'"
+                                                    b'\x94\x84\xc3\xf0'
+                                                    b'\xfb\xef\x85\xe7'),
+ 'api-ms-win-crt-filesystem-l1-1-0.dll': bytearray(b'\xa5\xdc\xe3\x8b'
+                                                   b'\xc9\xa1I\xab'
+                                                   b'\xe5\xd2\xf6\x1d'
+                                                   b'\xb8\xd6\xce\xc0'),
+ 'api-ms-win-crt-heap-l1-1-0.dll': bytearray(b'\x84\x1c\xb7\xc4\xbaY\xf4;'
+                                             b'[e\x9d\xd3\xdf\xe0,\xd2'),
+ 'api-ms-win-crt-locale-l1-1-0.dll': bytearray(b'\xa4\x04\xe8\xec'
+                                               b'\xee\x80\x0e\x8b\xed\xa8N\x87'
+                                               b'3\xa4\x01p'),
+ 'api-ms-win-crt-math-l1-1-0.dll': bytearray(b'\xcc\xf0\xa6\x12\x9a\x16\x06\x8a'
+                                             b'|\x9a\xa3\xb0\xb7\xee\xb4%'),
+ 'api-ms-win-crt-process-l1-1-0.dll': bytearray(b'\xe6*(\xc6z"+Z\xf76\xb6\xc3'
+                                                b'\xd6\x8b|\x82'),
+ 'api-ms-win-crt-runtime-l1-1-0.dll': bytearray(b'\x83C2\x88\xa2\x1f\xf0A'
+                                                b'|[\xa5l+A\x0c\xe8'),
+ 'api-ms-win-crt-stdio-l1-1-0.dll': bytearray(b'\x84N\x18p\x9c-\xed\xa4'
+                                              b'\x1f"(\x06\x8a\x8d,\xed'),
+ 'api-ms-win-crt-string-l1-1-0.dll': bytearray(b'Z\x82\xc7\x85\x80e3\\'
+                                               b'\xad\x14\xfb\x06\xf0F\\~'),
+ 'api-ms-win-crt-time-l1-1-0.dll': bytearray(b'\xb6K\x9e\x13\xc9\x0f\x84\xd0'
+                                             b'\xb5"\xcd\x06E\xc2\x10\x0c'),
+ 'api-ms-win-crt-utility-l1-1-0.dll': bytearray(b'&\xf0 \xc0\xe2\x10\xbc\xe7'
+                                                b'\xc7B\x8a\xc0I\xa3\xc5\xda'),
+ 'libcrypto-1_1.dll': bytearray(b'\x9dz\x0c\x99%lP\xaf\xd5\xb0V\x0b\xa2T\x890'),
+ 'libffi-7.dll': bytearray(b'\xee\xf7\x98\x14\x12\xbe\x8e\xa4Y\x06M0'
+                           b'\x90\xf4\xb3\xaa'),
+ 'libssl-1_1.dll': bytearray(b'\xbe\xc0\xf8o\x9d\xa7e\xe2\xa0,\x927%\x9ax\x98'),
+ 'python310.dll': bytearray(b'c\xa1\xfa\x92Y\xa3^\xae\xac\x04\x17L\xec\xb9\x00H'),
+ 'select.pyd': bytearray(b'\xa6S\xf3]\x05\xd2\xf6\xde\xbc]4\xda\xdd\xd3\xdf\xa1'),
+ 'ucrtbase.dll': bytearray(b'\x8ev\x80\xa8\xd0|<AY$\x1d1\xca\xaf6\x9c'),
+ 'unicodedata.pyd': bytearray(b'\x81\xd6*\xd3l\xbd\xdbNW\xa9\x10\x18'
+                              b'\xf3\xc0\x81n'),
+ 'vcruntime140.dll': bytearray(b'\xf3N\xb04\xaaJ\x975!\x86\x86Y\x0c\xba.\x8b')}
