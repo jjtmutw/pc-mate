@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice MQTT Desktop Paste</title>
+    <title>pc-mate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,9 +19,9 @@
     <main class="shell">
       <section class="hero card">
         <p class="eyebrow">VOICE TO DESKTOP</p>
-        <h1>手機輸入，電腦即貼</h1>
+        <h1>手機輸入，電腦即貼。</h1>
         <p class="lead">
-          用手機說話或掃碼，內容會立即送到電腦目前游標位置。
+          手機可以直接打字、用鍵盤語音轉文字、掃描條碼，或把檔案傳到電腦下載資料夾。也提供游標控制按鍵，適合做簡報、閱讀或遠端輸入。
         </p>
       </section>
 
@@ -29,7 +29,7 @@
         <section class="card">
           <div class="section-head">
             <p class="eyebrow">Step 1</p>
-            <h2>MQTT 連線</h2>
+            <h2>連線設定</h2>
           </div>
 
           <label class="field">
@@ -38,114 +38,143 @@
           </label>
 
           <label class="field">
+            <span>使用者代號</span>
+            <input id="topic-user" type="text" value="jj" placeholder="alice">
+          </label>
+
+          <label class="field">
             <span>Topic</span>
-            <input id="topic" type="text" value="jj/voice/input">
+            <input id="topic" type="text" value="jj/input" readonly>
           </label>
 
           <label class="field">
-            <span>Username</span>
-            <input id="username" type="text" placeholder="Optional">
+            <span>帳號</span>
+            <input id="username" type="text" placeholder="可留空">
           </label>
 
           <label class="field">
-            <span>Password</span>
-            <input id="password" type="password" placeholder="Optional">
+            <span>密碼</span>
+            <input id="password" type="password" placeholder="可留空">
           </label>
 
           <div class="button-row">
-            <button id="connect-button" class="primary-button" type="button">連接 MQTT</button>
+            <button id="connect-button" class="primary-button" type="button">連線 MQTT</button>
             <button id="disconnect-button" class="ghost-button" type="button">中斷連線</button>
           </div>
 
-          <p id="mqtt-status" class="muted">
-            請填入支援 WebSocket 的 MQTT 位址。
-          </p>
-        </section>
-
-        <section class="card">
-          <div class="section-head">
-            <p class="eyebrow">Step 2</p>
-            <h2>語音辨識</h2>
-          </div>
-
-          <label class="field">
-            <span>辨識語言</span>
-            <select id="language-select">
-              <option value="zh-TW">繁體中文</option>
-              <option value="en-US">English</option>
-              <option value="ja-JP">日本語</option>
-            </select>
-          </label>
-
-          <div class="button-row">
-            <button id="listen-button" class="primary-button" type="button">開始說話</button>
-            <button id="stop-button" class="ghost-button" type="button">停止辨識</button>
-          </div>
-
-          <p id="speech-status" class="muted">
-            使用手機瀏覽器的內建語音辨識。
-          </p>
+          <p id="mqtt-status" class="muted">請先連線到 WebSocket MQTT Broker。</p>
         </section>
 
         <section class="card" id="scanner-card">
           <div class="section-head">
-            <p class="eyebrow">Step 3</p>
-            <h2>QR / Barcode 掃描</h2>
+            <p class="eyebrow">Step 2</p>
+            <h2>掃碼區塊</h2>
           </div>
 
           <div id="scanner" class="scanner-shell"></div>
-          <p id="scan-status" class="muted">
-            可掃描 QR Code 與常見條碼。
-          </p>
+          <p id="scan-status" class="muted">開啟相機後，掃到內容會直接帶入文字輸入區塊。</p>
 
           <div class="button-row">
             <button id="start-scan-button" class="primary-button" type="button">開始掃描</button>
             <button id="stop-scan-button" class="ghost-button" type="button">停止掃描</button>
           </div>
 
-          <p class="muted">
-            掃到內容後會直接帶入下方文字區，並播放提示音。
-          </p>
+          <p class="muted">支援 QR Code 與常見一維條碼。掃描成功後會雙嗶並閃爍提示。</p>
         </section>
 
         <section class="card transcript-card">
           <div class="section-head">
-            <p class="eyebrow">Step 4</p>
-            <h2>待發送文字</h2>
+            <p class="eyebrow">Step 3</p>
+            <h2>文字輸入區塊</h2>
           </div>
 
           <label class="field">
-            <span>內容</span>
-            <textarea id="transcript-input" rows="6" placeholder="語音結果或掃碼結果會出現在這裡，也可以手動修改後再送出。"></textarea>
+            <span>待送出內容</span>
+            <textarea id="transcript-input" rows="6" placeholder="可直接打字，也可使用手機鍵盤內建的語音轉文字功能。"></textarea>
           </label>
 
           <label class="check-row">
             <input id="append-enter" type="checkbox" checked>
-            <span>貼上後自動送出 Enter</span>
+            <span>送出後自動按 Enter</span>
           </label>
 
           <div class="button-row">
-            <button id="send-button" class="primary-button" type="button">發送到電腦</button>
+            <button id="send-button" class="primary-button" type="button">送出到電腦</button>
             <button id="clear-button" class="ghost-button" type="button">清空內容</button>
           </div>
 
-          <p class="muted">
-            電腦端會自動貼到目前焦點位置。
-          </p>
+          <p class="muted">文字會送到桌面端 listener，並貼到目前有焦點的輸入位置。</p>
         </section>
 
-        <section class="card log-card">
+        <section class="card remote-card">
           <div class="section-head">
-            <p class="eyebrow">Monitor</p>
-            <h2>事件記錄</h2>
+            <p class="eyebrow">Step 4</p>
+            <h2>游標輸入區塊</h2>
           </div>
-          <div id="log" class="log" aria-live="polite"></div>
+
+          <p class="muted">按下按鈕會立即透過 MQTT 送出，不需要再按送出鍵。</p>
+
+          <div class="remote-grid">
+            <button class="remote-button remote-up" type="button" data-key-command="up">上</button>
+            <button class="remote-button remote-pageup" type="button" data-key-command="pageup">Page Up</button>
+            <button class="remote-button remote-left" type="button" data-key-command="left">左</button>
+            <button class="remote-button remote-down" type="button" data-key-command="down">下</button>
+            <button class="remote-button remote-right" type="button" data-key-command="right">右</button>
+            <button class="remote-button remote-pagedown" type="button" data-key-command="pagedown">Page Down</button>
+          </div>
         </section>
+
+        <section class="card file-card">
+          <div class="section-head">
+            <p class="eyebrow">Step 5</p>
+            <h2>檔案傳輸區塊</h2>
+          </div>
+
+          <label class="field">
+            <span>選擇手機檔案</span>
+            <input id="file-input" type="file">
+          </label>
+
+          <div class="file-meta" id="file-meta">尚未選擇檔案。</div>
+
+          <div class="button-row">
+            <button id="send-file-button" class="primary-button" type="button">傳送到電腦下載資料夾</button>
+            <button id="clear-file-button" class="ghost-button" type="button">清除選擇</button>
+          </div>
+
+          <p id="file-status" class="muted">支援一般手機檔案。檔案會透過 MQTT 分段傳送到 PC 的 Downloads 資料夾。</p>
+        </section>
+      </section>
+
+      <section class="card download-card">
+        <div class="section-head">
+          <p class="eyebrow">Download</p>
+          <h2>快速下載</h2>
+        </div>
+        <div class="download-grid">
+          <div id="download-qrcode" class="download-qrcode" aria-label="手機頁面 QR code"></div>
+          <div class="download-copy">
+            <p class="muted">手機頁面</p>
+            <a class="download-link" href="https://jjtmutw.github.io/web/pc-mate/web/" target="_blank" rel="noreferrer">https://jjtmutw.github.io/web/pc-mate/web/</a>
+            <p class="muted">桌面 Listener</p>
+            <div id="download-qrcode-listener" class="download-qrcode download-qrcode-inline" aria-label="Listener 下載 QR code"></div>
+            <a class="download-link" href="https://jjtmutw.github.io/web/pc-mate/dist/pc-mate-listener.zip" target="_blank" rel="noreferrer">https://jjtmutw.github.io/web/pc-mate/dist/pc-mate-listener.zip</a>
+          </div>
+        </div>
+
+        <div class="usage-note">
+          <p class="usage-note-title">使用方式</p>
+          <p>電腦端先開啟 `pc-mate-listener.exe`，並把焦點放在要輸入的位置。</p>
+          <p>手機端輸入相同的使用者代號後，Topic 會自動變成 `使用者/input`。</p>
+          <p>文字輸入會貼到目前游標處，方向鍵會直接當作鍵盤按鍵送出。</p>
+          <p>檔案傳輸完成後，桌面端會把檔案存到目前登入帳號的 `Downloads` 目錄。</p>
+        </div>
       </section>
     </main>
 
     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
     <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

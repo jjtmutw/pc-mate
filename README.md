@@ -1,4 +1,4 @@
-# Voice MQTT Desktop Paste
+# pc-mate
 
 This is a standalone project for turning phone speech or scanned code content into pasted text on a computer:
 
@@ -29,7 +29,7 @@ This avoids ESP32 hardware and also works better for Chinese text, because the d
 - WebSocket URL for phone: `wss://broker.emqx.io:8084/mqtt`
 - TCP host for desktop: `broker.emqx.io`
 - TCP port for desktop: `1883`
-- Topic: `jj/voice/input`
+- Topic: `$user/input`
 
 ## Python dependencies
 
@@ -69,6 +69,31 @@ python listener.py
 6. Connect MQTT.
 7. Use speech recognition or QR/barcode scanning.
 8. Focus any text field on the computer, then send text from the phone.
+
+## Usage guide
+
+1. Download and unzip `pc-mate-listener.zip` on the computer, then run `pc-mate-listener`.
+2. Configure MQTT settings on the computer. The topic must match the phone side.
+3. Open the web page on your phone:
+   `https://jjtmutw.github.io/web/pc-mate/web/`
+4. In `Step 1`, enter your own `$user` name, for example `alice`.
+5. The web page will automatically generate the topic:
+   `alice/input`
+6. The desktop listener must use the same topic, for example:
+   `alice/input`
+7. After `Connect MQTT` succeeds, you can start using the system.
+8. Use `Step 2` for speech input, or `Step 3` to scan QR Code / Barcode.
+9. The content will appear in `Step 4`. Confirm it, then press send.
+10. When the desktop listener receives the message, it will automatically paste the text into the current cursor position.
+
+## Multi-user usage
+
+- Each user should use a different `$user`.
+- Example:
+  - `alice` -> `alice/input`
+  - `bob` -> `bob/input`
+  - `cashier1` -> `cashier1/input`
+- This prevents users from interfering with each other.
 
 ## Security reminder
 

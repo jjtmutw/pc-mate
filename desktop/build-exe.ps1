@@ -9,7 +9,7 @@ $projectRoot = Split-Path -Parent $scriptDir
 $distDir = Join-Path $projectRoot "dist"
 $workDir = Join-Path $projectRoot "build"
 
-Write-Host "Building listener.exe from listener.py ..."
+Write-Host "Building pc-mate listener.exe from listener.py ..."
 
 Push-Location $projectRoot
 try {
@@ -17,7 +17,7 @@ try {
     --noconfirm `
     --clean `
     --onefile `
-    --name voice-mqtt-listener `
+    --name pc-mate-listener `
     --distpath $distDir `
     --workpath $workDir `
     (Join-Path $scriptDir "listener.py")
@@ -28,4 +28,4 @@ finally {
 
 Write-Host ""
 Write-Host "Build finished."
-Write-Host "EXE output:" (Join-Path $distDir "voice-mqtt-listener.exe")
+Write-Host "EXE output:" (Join-Path $distDir "pc-mate-listener.exe")
