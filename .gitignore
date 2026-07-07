@@ -9,7 +9,6 @@ venv/
 .pyinstaller/
 __pycache__/
 *.pyc
-dist/
 build/
 node_modules/
 compile_commands.json
